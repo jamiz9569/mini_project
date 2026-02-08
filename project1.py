@@ -38,4 +38,5 @@ else:
 print(f"computer chose {computer} and you chose {you}")
 
 
+#mini project
 
