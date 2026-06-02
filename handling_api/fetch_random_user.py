@@ -13,8 +13,33 @@ def fetch_random_user():
         return username ,country
     else:
         raise Exception("API request failed with status code: {}".format(response.status_code)) 
+    
+
+# health check 
+
+import http.client
+
+conn = http.client.HTTPSConnection("api.freeapi.app")
+
+#conn.request("GET", "/api/v1/healthcheck")
+#conn.request("PUT", "/api/v1/healthcheck")
+
+#response = conn.getresponse()
+#print(response.read().decode())
+
+#conn.close()
+
+conn.request("GET", "/api/v1/user")
+res = conn.getresponse()
+print(res.read())
+res.close()
+
+conn.request("POST", "/api/v1/healthcheck")
+res = conn.getresponse()
+print(res.read())
+res.close()
         
-def main():
+def random_user():
     try:
         result = fetch_random_user()
         print(result)
@@ -23,5 +48,6 @@ def main():
 
     
 if __name__ == "__main__":
-    main()
+    random_user()
+
 
