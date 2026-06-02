@@ -1,7 +1,7 @@
 
 import json
 
-from traitlets import This 
+ # from traitlets import This  
 
 def list_all_videos(videos):
     print("\n")
@@ -14,8 +14,10 @@ def list_all_videos(videos):
         """
         print(f"{index}. {video['name']} - Duration: {video['time']}")
         """
-      print me the list of videos in a formatted way, where each video is displayed with its index (starting from 1), name, and duration.
-      The enumerate() function is used to get both the index and the video details from the list of videos. 
+      print me the list of videos in a formatted way, 
+      where each video is displayed with its index (starting from 1), name, and duration.
+      The enumerate() function is used to get both the index and 
+      the video details from the list of videos. 
       The f-string is used to format the output for better readability.
 
        """
